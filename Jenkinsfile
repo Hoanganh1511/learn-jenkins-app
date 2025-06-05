@@ -24,7 +24,7 @@ pipeline {
             steps{
                 sh '''
                 echo "Test stage"
-                find ./build -mindepth 2 -maxdepth 2 -type f -name "index.html"
+                find ~/build -mindepth 2 -maxdepth 2 -type f -name "index.html"
                 '''
             }
         }
