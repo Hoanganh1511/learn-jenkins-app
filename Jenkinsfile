@@ -22,7 +22,10 @@ pipeline {
         }
           stage('Test'){
             steps{
-                sh 'echo "Test stage"'
+                sh '''
+                echo "Test stage"
+                find . -mindepth 2 -maxdepth 2 -type f -name "index.html"
+                '''
             }
         }
     }
