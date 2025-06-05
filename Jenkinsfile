@@ -31,7 +31,7 @@ pipeline {
                     echo "index.html not found"
                 fi
 
-                npm run test
+                npm test
                 '''
             }
         }
