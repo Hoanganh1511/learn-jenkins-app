@@ -21,6 +21,12 @@ pipeline {
             }
         }
           stage('Test'){
+              agent {
+                    docker {
+                        image 'node:18-alpine'
+                        reuseNode true
+                    }
+                }
             steps{
                 sh '''
                 echo "Test stage"
@@ -31,7 +37,7 @@ pipeline {
                     echo "index.html not found"
                 fi
 
-                npm test
+                npm run test
                 '''
             }
         }
